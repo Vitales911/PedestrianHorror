@@ -523,7 +523,7 @@ Transform:
   m_LocalScale: {x: 0.14285713, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 6225720777840762381}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3247568831587935222
 MonoBehaviour:
@@ -547,6 +547,7 @@ MonoBehaviour:
   - {fileID: 6742023497412500605, guid: 17f31e9c9626b504599b40c8fb020550, type: 3}
   - {fileID: 2550044547266400278, guid: 79f095ea8de07f645878c2b00773adc7, type: 3}
   activeTilesCarLeft: []
+  SpeedCarLeft: 0.04
   SpawnPosLeft: {fileID: 6161947117146546121}
   quantCarL: 5
 --- !u!1 &8860686556647358055
@@ -896,8 +897,8 @@ Transform:
   - {fileID: 111146003889893859}
   - {fileID: 4074652000797600665}
   - {fileID: 7555474119963840523}
-  - {fileID: 2892289761708143600}
   - {fileID: 6161947117146546121}
+  - {fileID: 2892289761708143600}
   m_Father: {fileID: 6342903720943591120}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -993,7 +994,7 @@ Transform:
   m_LocalScale: {x: 0.14285713, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 6225720777840762381}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7275406260147429589
 MonoBehaviour:
@@ -1017,5 +1018,7 @@ MonoBehaviour:
   - {fileID: 6742023497412500605, guid: 17f31e9c9626b504599b40c8fb020550, type: 3}
   - {fileID: 2550044547266400278, guid: 79f095ea8de07f645878c2b00773adc7, type: 3}
   activeTilesCarRight: []
+  SpeedCarRight: -0.04
   SpawnPosRight: {fileID: 2892289761708143600}
   quantCarR: 5
+  move: {fileID: 998727762385309073, guid: 23af57141396f6544851686c84f719d9, type: 3}

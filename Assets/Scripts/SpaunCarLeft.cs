@@ -6,7 +6,7 @@ public class SpaunCarLeft : MonoBehaviour
 {
     public GameObject[] CarL;
     public List<GameObject> activeTilesCarLeft = new List<GameObject>();
-    private float SpeedCarLeft = 0.02f;
+    public float SpeedCarLeft = 0.02f;
     public Transform SpawnPosLeft;
     public int quantCarL = 7;
     void Start()
@@ -26,7 +26,7 @@ public class SpaunCarLeft : MonoBehaviour
         GameObject nextTileCarLeft = Instantiate(CarL[tileIndexCarLeft], SpawnPosLeft.position, Quaternion.Euler(0, -90f, 0));
         activeTilesCarLeft.Add(nextTileCarLeft);
     }
-    private IEnumerator SpawnCarsLeft()
+    public IEnumerator SpawnCarsLeft()
     {
         for (int i = 0; i < quantCarL;)
         {

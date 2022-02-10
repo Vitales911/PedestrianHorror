@@ -7,6 +7,9 @@ TagManager:
   - DestroyLeft
   - DestroyRight
   - Car
+  - WonPlayer
+  - SpaunCar1
+  - SpaunCar
   layers:
   - Default
   - TransparentFX

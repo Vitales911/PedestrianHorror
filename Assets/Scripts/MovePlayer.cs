@@ -1,17 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
 
 public class MovePlayer : MonoBehaviour
 {
     public float ForceValue;
     private Rigidbody rb;
+    public DeadPlayer deadPlayer;
+    public GameObject PanelDead;
+    public PlayerWin playerWin;
+    public GameObject PanelWon;
+    private bool _wait = false;
+    private float Second = 3f;
+    public Text timerStart;
+    public GameObject _timerStart;
 
     void Start()
     {
+        timerStart.text = Second.ToString();
         Physics.gravity = new Vector3(0, -20, 0);
         rb = GetComponent<Rigidbody>();
         SwipePlayer.SwipeEvent += OnSwipe;
+        StartCoroutine(Wait());
     }
     private void OnSwipe(Vector2 direction)
     {
@@ -21,8 +31,16 @@ public class MovePlayer : MonoBehaviour
 
         Move(dir);
     }
-    private void Update()
+    void Update()
     {
+        if (Second > 0)
+        {
+            Second -= Time.deltaTime;
+            timerStart.text = Mathf.Round(Second).ToString();
+
+        }
+        if (_wait == true)
+        {
         if (Input.GetKeyDown(KeyCode.A))
             Move(Vector3.left);
         else if (Input.GetKeyDown(KeyCode.D))
@@ -31,11 +49,37 @@ public class MovePlayer : MonoBehaviour
             Move(Vector3.forward);
         else if (Input.GetKeyDown(KeyCode.S))
             Move(Vector3.back);
+        }
+
+
+        Lose();
+        Won();
     }
 
-
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(Second);
+        _wait = true;
+        _timerStart.SetActive(false);
+    }
     private void Move(Vector3 direction)
     {
         rb.AddRelativeForce(direction * ForceValue);
+    }
+
+    public void Lose()
+    {
+        if (deadPlayer.Dead == true)
+        {
+            PanelDead.SetActive(true);
+        }
+        
+    }
+    public void Won()
+    {
+        if (playerWin.Won == true)
+        {
+            PanelWon.SetActive(true);
+        }
     }
 }

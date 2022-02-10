@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6171424834620616456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 13159297107652330}
+  - component: {fileID: 5546980134872497615}
+  m_Layer: 0
+  m_Name: SpaunCarRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &13159297107652330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171424834620616456}
+  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
+  m_LocalPosition: {x: -2.5998092, y: 0.3, z: 4.7400002}
+  m_LocalScale: {x: 0.14285713, y: 1, z: 2}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5546980134872497615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171424834620616456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2c63e1ba617094d8822edfc2b04e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarR:
+  - {fileID: 6239315182587085161, guid: 18a511e50017162478af9d557a0cbc35, type: 3}
+  - {fileID: 537669487536549221, guid: c6f187933cd760b4b8fc1cca51a0d044, type: 3}
+  - {fileID: 6402501979489330699, guid: 22e48bd6fc702524ab638d99b2036742, type: 3}
+  - {fileID: 5525843832493651374, guid: 755edb1e00ad1d54d96fb350151e4d76, type: 3}
+  - {fileID: 2531498016260125199, guid: ccdac666f579e8847b2caa87a83e68ea, type: 3}
+  - {fileID: 2698383555938516317, guid: 3575ff5c46225eb4886a64bb668ba838, type: 3}
+  - {fileID: 6742023497412500605, guid: 17f31e9c9626b504599b40c8fb020550, type: 3}
+  - {fileID: 2550044547266400278, guid: 79f095ea8de07f645878c2b00773adc7, type: 3}
+  activeTilesCarRight: []
+  SpeedCarRight: -0.02
+  SpawnPosRight: {fileID: 13159297107652330}
+  quantCarR: 5

@@ -12,38 +12,31 @@ public class GameSpauner : MonoBehaviour
     private float spawnPosPlane = 11.5f;
     private float tileLengthRoad = 8f;
     private float tileLengthPlane = 8f;
-
+    public GameObject Finish;
 
     [SerializeField] private Transform player;
-    private int startTilesRoad = 3;
-    private int startTilesPlane = 3;
+    public int startTilesRoad = 3;
+    public int startTilesPlane = 3;
 
     void Start()
     {
-        for (int i = 0; i < startTilesRoad; i++)
-        {
-             SpawnTileRoad(Random.Range(0, TilePrefabsRoad.Length));
-        }
-        for (int j = 0; j < startTilesPlane; j++)
-        {
-            SpawnTilePlane(Random.Range(0, TilePrefabsPlane.Length));
-        }
+        Spawn();
     }
 
     void Update()
     {
-        if (player.position.z - 60 > spawnPosRoad - (startTilesRoad * tileLengthRoad))
-        {
-            if (player.position.z - 60 > spawnPosPlane - (startTilesPlane * tileLengthPlane))
-            {
-                SpawnTileRoad(Random.Range(0, TilePrefabsRoad.Length));
-                SpawnTilePlane(Random.Range(0, TilePrefabsPlane.Length));
-                DeleteTile();
-            }
+        //if (player.position.z - 10 > spawnPosRoad - (startTilesRoad * tileLengthRoad))
+        //{
+        //    if (player.position.z - 10 > spawnPosPlane - (startTilesPlane * tileLengthPlane))
+        //    {
+        //        SpawnTileRoad(Random.Range(0, TilePrefabsRoad.Length));
+        //        SpawnTilePlane(Random.Range(0, TilePrefabsPlane.Length));
+        //        DeleteTile();
+        //    }
 
-        }
+        //}
+
     }
-
     private void SpawnTileRoad(int tileIndex)
     {
         GameObject nextTile = Instantiate(TilePrefabsRoad[tileIndex], transform.forward * spawnPosRoad, transform.rotation);
@@ -63,5 +56,22 @@ public class GameSpauner : MonoBehaviour
         activeTiles.RemoveAt(0);
         Destroy(activeTilesPlane[0]);
         activeTilesPlane.RemoveAt(0);
+    }
+
+    private void Spawn()
+    {
+        for (int i = 0; i < startTilesRoad; i++)
+        {
+            SpawnTileRoad(Random.Range(0, TilePrefabsRoad.Length));
+        }
+        for (int j = 0; j < startTilesPlane; j++)
+        {
+            SpawnTilePlane(Random.Range(0, TilePrefabsPlane.Length));
+        }
+        FinishSpawn();
+    }
+    private void FinishSpawn()
+    {
+        Instantiate(Finish, transform.forward * (spawnPosPlane - (0.5f * startTilesPlane)) , transform.rotation);
     }
 }

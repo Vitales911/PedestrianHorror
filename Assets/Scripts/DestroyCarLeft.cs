@@ -9,7 +9,6 @@ public class DestroyCarLeft : MonoBehaviour
     {
         if (other.CompareTag("Car"))
         {
-
             for (int j = 0; j < spaunCarR.activeTilesCarRight.Count;)
             {
                 Destroy(spaunCarR.activeTilesCarRight[j]);

@@ -6,9 +6,11 @@ public class SpaunCarRight : MonoBehaviour
 {
     public GameObject[] CarR;
     public List<GameObject> activeTilesCarRight = new List<GameObject>();
-    private float SpeedCarRight = -0.02f;
+    public float SpeedCarRight = -0.02f;
     public Transform SpawnPosRight;
     public int quantCarR = 7;
+    public MovePlayer move;
+
     void Start()
     {
         StartCoroutine(SpawnCarsRight());
@@ -26,7 +28,7 @@ public class SpaunCarRight : MonoBehaviour
         GameObject nextTileCarRight = Instantiate(CarR[tileIndexCarRight], SpawnPosRight.position, Quaternion.Euler(0, 90f, 0));
         activeTilesCarRight.Add(nextTileCarRight);
     }
-    private IEnumerator SpawnCarsRight()
+    public IEnumerator SpawnCarsRight()
     {
         for (int i = 0; i < quantCarR;)
         {
@@ -34,4 +36,6 @@ public class SpaunCarRight : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(4, quantCarR));
         }
     }
+
+
 }

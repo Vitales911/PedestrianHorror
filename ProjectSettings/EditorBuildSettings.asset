@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pedestrian horror Game.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: ad16a08eeca8f394ea7b07c99a854718
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: 2a3969cde973d7d42b3a2997cf974847
   m_configObjects: {}
